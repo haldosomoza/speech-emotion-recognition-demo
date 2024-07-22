@@ -1,0 +1,10 @@
+numpy
+pandas
+shutil
+streamlit
+pytubefix
+moviepy
+librosa
+soundfile
+altair
+joblib
