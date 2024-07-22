@@ -2,7 +2,7 @@ import librosa
 import soundfile
 import numpy as np  
 
-PATH_SAVED_MODEL = ".\\saved_models\\model_2024-07.pkl"
+PATH_SAVED_MODEL = "./saved_models/model_2024-07.pkl"
 
 OBSERVED_EMOTIONS = ['neutral', 'calm', 'happy', 'sad', 'angry', 'fearful']    # 'disgust', 'surprised' 
 

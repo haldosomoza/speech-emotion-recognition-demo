@@ -34,8 +34,8 @@ YOUTUBE_SAMPLES = [
     "https://www.youtube.com/watch?v=F2kJeD_cl5w"
 ]
 
-PATH_STYLE_CSS_FILE = ".\\static_content\\style.css"
-PATH_EMOTION_IMAGES = ".\\icon_images\\face_prediction.png"
+PATH_STYLE_CSS_FILE = "./static_content/style.css"
+PATH_EMOTION_IMAGES = "./icon_images/face_prediction.png"
 
 # removing the contents of the processing folders
 my_hf.remove_folder_contents(my_hf.PATH_AUDIO_DOWNLOADED)

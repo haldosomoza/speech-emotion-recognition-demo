@@ -39,7 +39,7 @@ def split_wav_audio_file(audio_file_path, segment_duration=AUDIO_SEGMENTS_DURATI
     # creating a file for each segment
     segments_file_paths = []
     for i, segment in enumerate(segments):
-        segment_file_path = f"{my_hf.PATH_AUDIO_SPLITTED}\\{os.path.basename(audio_file_path).replace('.wav','')}_Segment{str(i).zfill(3)}.wav"
+        segment_file_path = f"{my_hf.PATH_AUDIO_SPLITTED}/{os.path.basename(audio_file_path).replace('.wav','')}_Segment{str(i).zfill(3)}.wav"
         sf.write(segment_file_path, segment, sr)
         segments_file_paths.append(segment_file_path)
 
@@ -59,7 +59,7 @@ def _download_mp4_video_from_youtube(video_url):
     print("Out Youtube Filename:", out_file_path)
 
     out_file_folder, out_file_name, out_file_extension = my_hf.split_file_path(out_file_path)
-    mp4_file_path = out_file_folder + "\\" + my_hf.generate_provisional_file_name("AUDIO") + out_file_extension 
+    mp4_file_path = out_file_folder + "/" + my_hf.generate_provisional_file_name("AUDIO") + out_file_extension 
     os.rename(out_file_path, mp4_file_path)
     print("New Youtube Filename:", out_file_path)
 
