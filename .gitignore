@@ -1,1 +1,4 @@
 __pycache__
+01_audio_downloaded/*.mp4
+01_audio_downloaded/*.wav
+02_audio_splitted/*.wav
