@@ -26,7 +26,7 @@ ABOUT_THIS_PROJECT = [
 BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v="
 
 YOUTUBE_SAMPLES = [
-    "https://www.youtube.com/watch?v=hpZFJctBUHQ",
+    "https://www.youtube.com/watch?v=hpZFJctBUHQ (QUITAR DE ACAM, NO CONVIENE PROBAR ESTE)",
     "https://www.youtube.com/watch?v=F8dImol79ew",
     "https://www.youtube.com/watch?v=Nao3M3UpPpI",
     "https://www.youtube.com/watch?v=DwOVXz74N9c",
@@ -95,7 +95,7 @@ if audio_obtained:
     st.markdown ("<br/>", unsafe_allow_html=True)
     st.subheader('Step 2: Preprocessing the audio file')
     try:
-        with st.spinner('Splitting the audio file into smaller pieces ...'):
+        with st.spinner('Splitting the audio file and removing silence segments ...'):
             #segments_audio_file_paths = my_ha.split_wav_audio_file_by_duration(audio_wav_file_path) # replaced for next line
             segments_audio_file_paths = my_ha.split_wav_audio_file_by_silence(audio_wav_file_path)
             segments_audio_file_feats = []
