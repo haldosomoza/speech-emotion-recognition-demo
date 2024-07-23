@@ -121,6 +121,7 @@ if audio_preprocessed:
             model = joblib.load(my_hm.PATH_SAVED_MODEL)
             # predicting the emotions
             predictions = model.predict(segments_audio_file_feats)
+            print("Predictions: ", predictions)
             st.success('Predicted the emotions in the audio !')
 
         emotions_predicted = True
