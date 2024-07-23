@@ -21,6 +21,8 @@ def remove_folder_contents(folder_path):
                 shutil.rmtree(file_path)
         except Exception as e:
             print(f'Failed to delete {file_path}. Reason: {e}')
+    # creating one empty folder
+    os.makedirs(folder_path, exist_ok=True)
 
 # === === === === ===
 
