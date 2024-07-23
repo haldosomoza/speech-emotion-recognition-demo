@@ -1,3 +1,0 @@
-The purpose of this file is to allow this folder be committed to GitHub, 
-because apparently it don't allow to upload empty folder, 
-but it is necessary to exist to process de audio files.

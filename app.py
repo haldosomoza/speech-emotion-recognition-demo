@@ -96,9 +96,11 @@ if audio_obtained:
     st.subheader('Step 2: Preprocessing the audio file')
     try:
         with st.spinner('Splitting the audio file into smaller pieces ...'):
-            segments_audio_file_paths = my_ha.split_wav_audio_file(audio_wav_file_path)
+            #segments_audio_file_paths = my_ha.split_wav_audio_file_by_duration(audio_wav_file_path) # replaced for next line
+            segments_audio_file_paths = my_ha.split_wav_audio_file_by_silence(audio_wav_file_path)
             segments_audio_file_feats = []
-            for segment_audio_file_path in segments_audio_file_paths:
+            for i, segment_audio_file_path in enumerate(segments_audio_file_paths):
+                print("Featuring Audio Segment:", segment_audio_file_path)
                 audio_features = my_hm.extract_features_from_audio_file(segment_audio_file_path, mfcc=True, chroma=True, mel=True)
                 segments_audio_file_feats.append(audio_features)
             st.success(f'Audio splitted and preprocessed into {len(segments_audio_file_paths)} smaller pieces !')
@@ -169,3 +171,5 @@ if emotions_predicted:
     st.altair_chart(chart, use_container_width=True)
 
 # === === === === ===
+
+print("Finished successfully !")
