@@ -9,3 +9,5 @@ Group G:
 - Pujan Shretha
 - Carlos Rey Pinto
 - Haldo Somoza
+
+Online demo: https://ser-demo.streamlit.app/

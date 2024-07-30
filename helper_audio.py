@@ -24,14 +24,18 @@ AUDIO_REMAIN_MIN_LEN = 2000 # miliseconds
 
 # Function to download video from YouTube and convert into wav audio 
 def download_video_from_youtube_and_convert_to_wav_audio(video_url):
+    print("Starting download_video_from_youtube_and_convert_to_wav_audio ...")
     
     # downloading the youtube video
     video_file_path = _download_mp4_video_from_youtube(video_url)
+    print("Downloaded Video File Path:", video_file_path)
     
     # extracting the audio from the video
     audio_file_path = _convert_mp4_video_to_wav_audio(video_file_path)
-    
+    print("Converted Audio File Path:", audio_file_path)
+
     # returning the audio file path
+    print("Finishing download_video_from_youtube_and_convert_to_wav_audio ...")
     return audio_file_path
 
 # === === === === ===

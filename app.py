@@ -26,7 +26,7 @@ ABOUT_THIS_PROJECT = [
 BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v="
 
 YOUTUBE_SAMPLES = [
-    "https://www.youtube.com/watch?v=hpZFJctBUHQ (REMOVE, NOT ACURATED TO TEST)",
+    #"https://www.youtube.com/watch?v=hpZFJctBUHQ",
     "https://www.youtube.com/watch?v=F8dImol79ew",
     "https://www.youtube.com/watch?v=Nao3M3UpPpI",
     "https://www.youtube.com/watch?v=DwOVXz74N9c",
