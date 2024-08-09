@@ -4,8 +4,8 @@ import soundfile as sf
 
 import helper_files as my_hf   # Importing my helper_files.py module
 
-from pytube import YouTube
-from pytube.cli import on_progress
+#from pytube import YouTube
+#from pytube.cli import on_progress
 from moviepy.editor import VideoFileClip
 
 from pydub import AudioSegment

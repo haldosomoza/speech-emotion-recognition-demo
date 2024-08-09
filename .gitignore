@@ -2,5 +2,6 @@ __pycache__
 _DELETED/*
 00_training_dataset/Actor_*/*.wav
 01_audio_downloaded/*.mp4
+01_audio_preloaded/*.wav
 01_audio_downloaded/*.wav
 02_audio_splitted/*.wav
