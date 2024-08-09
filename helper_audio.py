@@ -4,8 +4,8 @@ import soundfile as sf
 
 import helper_files as my_hf   # Importing my helper_files.py module
 
-from pytubefix import YouTube
-from pytubefix.cli import on_progress
+from pytube import YouTube
+from pytube.cli import on_progress
 from moviepy.editor import VideoFileClip
 
 from pydub import AudioSegment
@@ -22,6 +22,7 @@ AUDIO_REMAIN_MIN_LEN = 2000 # miliseconds
 
 # === === === === ===
 
+# Deprecated: Function get problems eventually with the youtube download
 # Function to download video from YouTube and convert into wav audio 
 def download_video_from_youtube_and_convert_to_wav_audio(video_url):
     print("Starting download_video_from_youtube_and_convert_to_wav_audio ...")
@@ -36,6 +37,22 @@ def download_video_from_youtube_and_convert_to_wav_audio(video_url):
 
     # returning the audio file path
     print("Finishing download_video_from_youtube_and_convert_to_wav_audio ...")
+    return audio_file_path
+
+# Function to load precharged audio and convert into wav audio 
+def load_preloaded_audio_and_convert_to_wav_audio(audio_name):
+    print("Starting load_preloaded_audio_and_convert_to_wav_audio ...")
+
+    # setting the path of preloaded audio files
+    audio_file_path = f"{my_hf.PATH_AUDIO_PRELOADED}/{audio_name}"
+    print("Audio File Path:", audio_file_path)
+    
+    # extracting the audio from the video
+    audio_file_path = _convert_mp4_video_to_wav_audio(audio_file_path)
+    print("Converted Audio File Path:", audio_file_path)
+
+    # returning the audio file path
+    print("Finishing load_preloaded_audio_and_convert_to_wav_audio ...")
     return audio_file_path
 
 # === === === === ===

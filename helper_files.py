@@ -6,6 +6,7 @@ from datetime import datetime
 # === === === === ===
 
 PATH_AUDIO_DOWNLOADED = "./01_audio_downloaded"
+PATH_AUDIO_PRELOADED  = "./01_audio_preloaded"
 PATH_AUDIO_SPLITTED   = "./02_audio_splitted"
 
 # === === === === ===

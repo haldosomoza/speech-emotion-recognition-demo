@@ -26,12 +26,21 @@ ABOUT_THIS_PROJECT = [
 BASE_YOUTUBE_URL = "https://www.youtube.com/watch?v="
 
 YOUTUBE_SAMPLES = [
-    #"https://www.youtube.com/watch?v=hpZFJctBUHQ",
     "https://www.youtube.com/watch?v=F8dImol79ew",
     "https://www.youtube.com/watch?v=Nao3M3UpPpI",
     "https://www.youtube.com/watch?v=DwOVXz74N9c",
     "https://www.youtube.com/watch?v=aYuEyUXj2xo",
-    "https://www.youtube.com/watch?v=F2kJeD_cl5w"
+    "https://www.youtube.com/watch?v=F2kJeD_cl5w",
+    #"https://www.youtube.com/watch?v=hpZFJctBUHQ"
+]
+
+PRELOADED_SAMPLES = [
+    "", # empty first option
+    "01-DEMO-TEST-AUDIO-VIDEO.mp4",
+    "02-DEMO-TEST-AUDIO-VIDEO.mp4",
+    "03-DEMO-TEST-AUDIO-VIDEO.mp4",
+    "04-DEMO-TEST-AUDIO-VIDEO.mp4",
+    "05-DEMO-TEST-AUDIO-VIDEO.mp4",
 ]
 
 PATH_STYLE_CSS_FILE = "./static_content/style.css"
@@ -59,25 +68,34 @@ with st.expander("About this project ..."):
 st.markdown ("<br/>", unsafe_allow_html=True)
 st.subheader('Step 1: Obtaining one audio file')
 
-video_youtube_url = st.text_input('Enter a YouTube Video URL:', placeholder=BASE_YOUTUBE_URL)
-video_youtube_url = video_youtube_url.strip()
+# youtube samples were deprecated because some problems with the download
+# audio_source_selected = st.text_input('Enter a YouTube Video URL:', placeholder=BASE_YOUTUBE_URL)
+# audio_source_selected = video_youtube_url.strip()
+#
+# with st.expander("Have no idea! Clic here to show you some examples you can try ..."):
+#     for youtube_sample in YOUTUBE_SAMPLES:
+#         st.markdown(f"- [{youtube_sample}]({youtube_sample})")
 
-with st.expander("Have no idea! Clic here to show you some examples you can try ..."):
-    for youtube_sample in YOUTUBE_SAMPLES:
-        st.markdown(f"- [{youtube_sample}]({youtube_sample})")
+# preloaded samples were added to avoid the youtube download
+audio_source_selected = st.selectbox('Select one Sample Audio:', PRELOADED_SAMPLES)
 
 audio_obtained = False
-if video_youtube_url:
+if audio_source_selected:
     try:
-        if (not video_youtube_url.startswith(BASE_YOUTUBE_URL) or \
-            not re.match(r'^[a-zA-Z0-9_-]{11}$', video_youtube_url.replace(BASE_YOUTUBE_URL, ''))):
-            raise Exception("Invalid YouTube URL")
+        # youtube samples were deprecated because some problems with the download
+        # if (not video_youtube_url.startswith(BASE_YOUTUBE_URL) or \
+        #     not re.match(r'^[a-zA-Z0-9_-]{11}$', video_youtube_url.replace(BASE_YOUTUBE_URL, ''))):
+        #     raise Exception("Invalid YouTube URL")
 
-        with st.spinner('Downloading and converting video into audio file ...'):
+        with st.spinner('Loading and converting resource into wav audio file ...'):
             try:
-                audio_wav_file_path = my_ha.download_video_from_youtube_and_convert_to_wav_audio(video_youtube_url)
-            except Exception as ex: raise Exception("YouTube URL Not Found")
-            st.success('Video downloaded and converted into audio !')
+                # youtube samples were deprecated because some problems with the download
+                # audio_wav_file_path = my_ha.download_video_from_youtube_and_convert_to_wav_audio(audio_source_selected)
+                # --- --- ---
+                # preloaded samples were added to avoid the youtube download
+                audio_wav_file_path = my_ha.load_preloaded_audio_and_convert_to_wav_audio(audio_source_selected)
+            except Exception as ex: raise Exception("Resource Not Found")
+            st.success('Resource loaded and converted into wav audio file !')
 
             # showing one audio sampling control 
             audio_file = open(audio_wav_file_path, 'rb')
