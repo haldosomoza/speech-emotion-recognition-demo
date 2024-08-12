@@ -36,11 +36,12 @@ YOUTUBE_SAMPLES = [
 
 PRELOADED_SAMPLES = [
     "", # empty first option
-    "01-DEMO-TEST-AUDIO-VIDEO.mp4",
-    "02-DEMO-TEST-AUDIO-VIDEO.mp4",
-    "03-DEMO-TEST-AUDIO-VIDEO.mp4",
+    #"01-DEMO-TEST-AUDIO-VIDEO.mp4",
+    #"02-DEMO-TEST-AUDIO-VIDEO.mp4",
+    #"03-DEMO-TEST-AUDIO-VIDEO.mp4",
     "04-DEMO-TEST-AUDIO-VIDEO.mp4",
     "05-DEMO-TEST-AUDIO-VIDEO.mp4",
+    "06-DEMO-TEST-AUDIO-VIDEO.mp4",
 ]
 
 PATH_STYLE_CSS_FILE = "./static_content/style.css"
